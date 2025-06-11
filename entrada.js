@@ -4,5 +4,8 @@ export function mostra_na_tela(valor){
         tela.value = '';
         tela.dataset.novoNumero = 'false';
     }
+    else if(['+', '-', '×', '÷'].includes(tela.value.slice(-1)) && ['+', '-', '×', '÷'].includes(valor)){
+        return;// Não permite inserior um operador após o outro.
+    }
     tela.value += valor;
 }

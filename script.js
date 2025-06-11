@@ -3,7 +3,8 @@ const botoes = [
     ['4', '5', '6'],
     ['1', '2', '3'],
     ['0', '+', '-'],
-    ['×', '÷', '=']
+    ['×', '÷', '='],
+    ['DEL']
 ];
 
 const container = document.getElementById('botoes');
@@ -20,7 +21,11 @@ botoes.forEach(linha => {
         botao.onclick = () => {
             if (valor === '=') {
                 calcula();
-            } else {
+            }
+            else if(valor == 'DEL'){
+                limpa_ultimo_caractere();
+            }
+            else {
                 mostra_na_tela(valor);
             }
         };
