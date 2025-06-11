@@ -18,12 +18,13 @@
     background-color: LightSlateGrey;
     font-family: 'Verdana', sans-serif;
     font-weight: bold;
-    color:Aquamarine;
+    color:white;
+    background-color: rgb(146, 188, 174);
     margin-right:1px;
     margin-top:5px;
 }
 
-.operacao{
+.botao_operacao{
     width: 50px;
     height: 30px;
     font-size: 20px;
@@ -31,7 +32,22 @@
     background-color: LightSlateGrey;
     font-family: 'Verdana', sans-serif;
     font-weight: bold;
-    color: greenyellow;
+    color: white;
+    background-color:rgb(118, 197, 0);
+    margin-right:1px;
+    margin-top:5px;
+}
+
+.botao_deletar{
+    width: 50px;
+    height: 30px;
+    font-size: 16px;
+    text-align: center;
+    background-color: LightSlateGrey;
+    font-family: 'Verdana', sans-serif;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(150, 11, 8);
     margin-right:1px;
     margin-top:5px;
 }

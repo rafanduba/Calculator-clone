@@ -9,12 +9,17 @@ const botoes = [
 
 const container = document.getElementById('botoes');
 
+//Define o estilo e comportamento dos botões
 botoes.forEach(linha => {
     linha.forEach(valor => {
         const botao = document.createElement('button');
 
         const ehNumero = !isNaN(valor);
-        botao.className = ehNumero ? 'botao' : 'operacao';
+        botao.className = !isNaN(valor)
+            ? 'botao'
+            : valor === 'DEL'
+            ? 'botao_deletar'
+            : 'botao_operacao';
 
         botao.textContent = valor;
 
