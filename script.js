@@ -23,7 +23,12 @@ botoes.forEach(linha => {
                 calcula();
             }
             else if(valor == 'DEL'){
-                limpa_ultimo_caractere();
+                if(tela.dataset.novoNumero === 'true'){
+                    return;
+                }
+                else{
+                    limpa_ultimo_caractere();
+                }
             }
             else {
                 mostra_na_tela(valor);

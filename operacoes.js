@@ -7,6 +7,7 @@ export function calcula() {
     } catch {
         tela.value = 'Erro';
     }
+    tela.dataset.novoNumero = 'true'; // Define que o resultado é um novo número
 }
 
 export function limpa_ultimo_caractere(){
