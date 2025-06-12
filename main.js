@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import { mostra_na_tela } from './entrada.js';
-=======
 import { mostra_na_tela } from './operacoes.js';
->>>>>>> 6d41f33 (Resultado não pode ser apagado após virar termo)
 import { calcula } from './operacoes.js';
 import { limpa_ultimo_caractere } from './operacoes.js';
 
