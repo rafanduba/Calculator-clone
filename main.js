@@ -1,4 +1,4 @@
-import { mostra_na_tela } from './operacoes.js';
+import { mostra_na_tela } from './entrada.js';
 import { calcula } from './operacoes.js';
 import { limpa_ultimo_caractere } from './operacoes.js';
 
