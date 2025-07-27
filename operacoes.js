@@ -41,3 +41,10 @@ export function limpa_ultimo_caractere(){
         tela.dataset.novoNumero = 'false';
     }
 }
+
+export function limpa_tudo(){
+    const tela = document.getElementById('tela');
+    tela.value = '';
+    tela.dataset.novoNumero = 'false';
+    aux = ''; // Reseta o valor auxiliar
+}

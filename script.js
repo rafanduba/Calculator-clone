@@ -4,7 +4,7 @@ const botoes = [
     ['1', '2', '3'],
     ['0', '+', '-'],
     ['×', '÷', '='],
-    ['DEL']
+    ['DEL', 'AC']
 ];
 
 const container = document.getElementById('botoes');
@@ -17,7 +17,7 @@ botoes.forEach(linha => {
         const ehNumero = !isNaN(valor);
         botao.className = !isNaN(valor)
             ? 'botao'
-            : valor === 'DEL'
+            : valor === 'DEL' || valor === 'AC'
             ? 'botao_deletar'
             : 'botao_operacao';
 
@@ -34,6 +34,9 @@ botoes.forEach(linha => {
                 else{
                     limpa_ultimo_caractere();
                 }
+            }
+            else if (valor == 'AC') {
+                limpa_tudo();
             }
             else {
                 mostra_na_tela(valor);
