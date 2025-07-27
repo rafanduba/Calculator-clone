@@ -1,10 +1,5 @@
 const botoes = [
-    ['7', '8', '9'],
-    ['4', '5', '6'],
-    ['1', '2', '3'],
-    ['0', '+', '-'],
-    ['×', '÷', '='],
-    ['DEL', 'AC']
+    ['7', '8', '9', 'DEL', '4' , '5', '6', 'AC', '1', '2', '3', '+', '0', '×', '÷', '−', '^', '√', '.', '='],
 ];
 
 const container = document.getElementById('botoes');
@@ -46,4 +41,42 @@ botoes.forEach(linha => {
         container.appendChild(botao);
     });
     container.appendChild(document.createElement('br'));
+});
+
+
+//Responsividade ao teclado
+
+document.addEventListener('keydown', function(event) {
+    const tecla = event.key;
+
+    // Mapas de conversão para manter a lógica dos botões
+    const mapaTeclas = {
+        '*': '×',
+        '/': '÷',
+        '-': '−',
+        '+': '+',
+        '^': '^',
+        '.': '.',
+        'Enter': '=',
+        '=': '=',
+        'Backspace': 'DEL',
+        'Delete': 'AC'
+    };
+
+    if (!isNaN(tecla)) {
+        mostra_na_tela(tecla); // Número
+    } else if (mapaTeclas[tecla]) {
+        const valor = mapaTeclas[tecla];
+        if (valor === '=')
+            calcula();
+        else if (valor === 'DEL')
+            limpa_ultimo_caractere();
+        else if (valor === 'AC')
+            limpa_tudo();
+        else
+            mostra_na_tela(valor);
+    } else if (tecla === 'r') {
+        // tecla especial para raiz quadrada
+        mostra_na_tela('√');
+    }
 });

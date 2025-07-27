@@ -1,14 +1,25 @@
 export function calcula() {
     const tela = document.getElementById('tela');
     let expressao = tela.value;
-    expressao = expressao.replace(/×/g, '*').replace(/÷/g, '/');
+
+    // Substituições para operadores visuais
+    expressao = expressao
+        .replace(/×/g, '*')
+        .replace(/÷/g, '/')
+        .replace(/−/g, '-')
+        .replace(/√\(([^)]+)\)/g, 'sqrt($1)')
+        .replace(/√(\d+(\.\d+)?)/g, 'sqrt($1)');
+
     try {
-        tela.value = eval(expressao);
-    } catch {
+        const resultado = math.evaluate(expressao);
+        tela.value = resultado;
+    } catch (e) {
         tela.value = 'Erro';
     }
-    tela.dataset.novoNumero = 'true'; // Define que o resultado é um novo número
+
+    tela.dataset.novoNumero = 'true';
 }
+
 
 export function limpa_ultimo_caractere(){
     const tela = document.getElementById('tela');
